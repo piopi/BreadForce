@@ -429,6 +429,9 @@ footer {
     height: 100%;
     width: 100%;
   }
+  .personalInfo:hover{
+    opacity: 1;
+  }
   .personalInfo{
     background-color: var(--darker);
     color: var(--white);

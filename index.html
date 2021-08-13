@@ -259,38 +259,6 @@
       window.addEventListener("scroll", stickyNavBar);
       hamburger.addEventListener("click", mobileMenu);
       navLink.forEach((n) => n.addEventListener("click", closeMenu));
-      const mediaQuery = window.matchMedia('(min-width: 992px)')
-
-      function handleTabletChange(e) {
-        // Check if the media query is true
-        if (e.matches) {
-          teamMembers.forEach((n) => {
-            n.querySelector('.personalInfo').style.opacity=0;
-            n.addEventListener("mouseover", changeOpacity);
-          });
-        
-          teamMembers.forEach((n) => n.addEventListener("mouseleave", removeOpacity));
-        }else{
-          teamMembers.forEach((n) => {
-            n.querySelector('.personalInfo').style.opacity=1;
-            n.removeEventListener("mouseover", changeOpacity);
-        });
-          teamMembers.forEach((n) => n.removeEventListener("mouseleave", removeOpacity));
-        }
-      }
-
-// Register event listener
-mediaQuery.addListener(handleTabletChange)
-
-// Initial check
-handleTabletChange(mediaQuery)
-      
-      function changeOpacity(e){
-        e.target.closest(".person").querySelector('.personalInfo').style.opacity=1;
-      }
-      function removeOpacity(e){
-        e.target.closest(".person").querySelector('.personalInfo').style.opacity=0;
-      }
       function stickyNavBar() {
         if (window.scrollY >= navTop + 1) {
           nav.classList.add("fixed");
